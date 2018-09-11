@@ -9,6 +9,30 @@
  */
 
 // Your code :
+function multiply(arg1, arg2) {
+	let result = 0
+	if (arg1 < 0 && arg2 < 0) {
+		arg1 = -arg1
+		arg2 = -arg2
+		
+		for (let i=0; i < arg2; i++)
+			result += arg1
+	}
+	else if (arg1 >= 0 && arg2 >= 0) {
+		for (let i=0; i < arg2; i++)
+			result += arg1
+	}
+	else if (arg1 >= 0 && arg2 < 0){
+		for (let i=0; i < arg1; i++)
+		result += arg2
+	}
+		
+	else {
+		for (let i=0; i < arg2; i++)
+		result += arg1
+	}	
+	return result
+}
 
 //* Begin of tests
 const assert = require('assert')
