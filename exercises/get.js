@@ -16,6 +16,12 @@ const sourceObject = {
 }
 
 // Your code :
+function get(key) {
+	if (sourceObject.hasOwnProperty(key))
+		return sourceObject[key]
+	else
+		return undefined
+}
 
 //* Begin of tests
 const assert = require('assert')
