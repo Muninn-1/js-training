@@ -6,10 +6,19 @@
  * and wrapped by `*`
  *
  */
+function whisper(str){
+	str = str.toLowerCase()
+	str = "*" + str + "*"
 
+	return str
+}
 
 //* Begin of tests
 const assert = require('assert')
 
-assert.fail('You must write your own tests')
+assert.strictEqual(typeof whisper, 'function')
+assert.strictEqual(whisper.length, 1)
+assert.deepStrictEqual(whisper('AAA'), ('*aaa*'))
+assert.deepStrictEqual(whisper('ABcDEf'), ('*abcdef*'))
+assert.deepStrictEqual(whisper('AHFOEB'), ('*ahfoeb*'))
 // End of tests */

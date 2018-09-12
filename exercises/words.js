@@ -6,6 +6,11 @@
  *
  */
 
+ function words(str) {
+ 	let arr = str.split(" ")
+ 	return arr
+ }
+
 
 //* Begin of tests
 const assert = require('assert')
