@@ -11,15 +11,16 @@
  */
 
 function cutFirst(str) {
-
+	return str.substring(2)
 }
 
 function cutLast(str) {
-
+	return str.substring(0, (str.length -2))
 }
 
 function cutFirstLast(str) {
-
+	str = cutFirst(str)
+	return cutLast(str)
 }
 
 //* Begin of tests
@@ -29,19 +30,19 @@ const assert = require('assert')
 assert.strictEqual(typeof cutFirst, 'function')
 assert.strictEqual(cutFirst.length, 1)
 assert.deepStrictEqual(cutFirst('aaa'), ('a'))
-assert.deepStrictEqual(cutFirst('ABcDEf'), ('cDeF'))
+assert.deepStrictEqual(cutFirst('ABcDeF'), ('cDeF'))
 assert.deepStrictEqual(cutFirst('AHFOEB'), ('FOEB'))
 
 //Tests for cutFirst
 assert.strictEqual(typeof cutLast, 'function')
 assert.strictEqual(cutLast.length, 1)
-assert.deepStrictEqual(cutLast('AAA'), ('a'))
-assert.deepStrictEqual(cutLast('ABcDEf'), ('ABcD'))
+assert.deepStrictEqual(cutLast('aaa'), ('a'))
+assert.deepStrictEqual(cutLast('ABcDeF'), ('ABcD'))
 assert.deepStrictEqual(cutLast('AHFOEB'), ('AHFO'))
 //Tests for cutFirst
 assert.strictEqual(typeof cutFirstLast, 'function')
 assert.strictEqual(cutFirstLast.length, 1)
-assert.deepStrictEqual(cutFirstLast('AAA'), (''))
-assert.deepStrictEqual(cutFirstLast('ABcDEf'), ('cD'))
+assert.deepStrictEqual(cutFirstLast('aaa'), (''))
+assert.deepStrictEqual(cutFirstLast('ABcDeF'), ('cD'))
 assert.deepStrictEqual(cutFirstLast('AHFOEB'), ('FO'))
 // End of tests */
